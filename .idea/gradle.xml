@@ -9,6 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/JavaDemo" />
+            <option value="$PROJECT_DIR$/JsBridge" />
+            <option value="$PROJECT_DIR$/JsBridgeDemo" />
             <option value="$PROJECT_DIR$/LaunchMode" />
             <option value="$PROJECT_DIR$/ViewDemo" />
             <option value="$PROJECT_DIR$/annotation" />
