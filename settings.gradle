@@ -1,1 +1,1 @@
-include ':app', ':binder', ':LaunchMode', ':thread', ':JavaDemo', ':ViewDemo', ':annotation', ':pluginApk', ':library', ':hook', ':hotfix', ':JsBridge', ':JsBridgeDemo'
+include ':app', ':binder', ':LaunchMode', ':thread', ':JavaDemo', ':ViewDemo', ':annotation', ':pluginApk', ':library', ':hook', ':hotfix', ':JsBridge', ':JsBridgeDemo', ':DesignMode'
