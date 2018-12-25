@@ -123,7 +123,7 @@ public class PreLoadReactDelegate {
                     }
                     mReactRootView = new ReactRootView(mActivity);
                     mReactRootView.startReactApplication(
-                            getReactInstanceManager(),
+                            ReactNativePreLoader.getReactInstanceManager(mActivity,jsBundle),
                             PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT,
                             null);
                     mActivity.setContentView(mReactRootView);

@@ -35,11 +35,8 @@ public class ReactNativePreLoader {
         }
         // 1.创建ReactRootView
         ReactRootView rootView = new ReactRootView(activity);
-        mReactInstanceManager = getReactInstanceManager(activity,jsBundle);
-        rootView.startReactApplication(
-                mReactInstanceManager,
-                PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT,
-                null);
+        mReactInstanceManager = getReactInstanceManager(activity, jsBundle);
+        rootView.startReactApplication(mReactInstanceManager, PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT, null);
         // 2.添加到缓存
         CACHE.put(PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT, rootView);
     }
@@ -72,23 +69,6 @@ public class ReactNativePreLoader {
 
     }
 
-    public static void setReactInstanceManager(Activity activity, String jsBundle) {
-        ReactRootView rootView = ReactNativePreLoader.getReactRootView(PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT);
-        if (rootView == null) {
-            rootView = new ReactRootView(activity);
-            mReactInstanceManager = ReactNativePreLoader.getReactInstanceManager(activity,jsBundle);
-            rootView.startReactApplication(
-                    mReactInstanceManager,
-                    PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT,
-                    null);
-        }
-        if (rootView.getReactInstanceManager() == null) {
-            mReactInstanceManager = ReactNativePreLoader.getReactInstanceManager(activity,jsBundle);
-            rootView.startReactApplication(mReactInstanceManager, PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT, null);
-        }
-        activity.setContentView(rootView);
-
-    }
 
     public static ReactInstanceManager getReactInstanceManager(Activity activity, String jsBundle) {
         //默认jsBundle
@@ -100,7 +80,7 @@ public class ReactNativePreLoader {
                     .setApplication(activity.getApplication())
 //                .setBundleAssetName(bundleName)
 //                        .setJSBundleFile("/sdcard/"+bundleName)
-                    .setJSBundleFile("/sdcard/" + jsBundle)
+                    .setJSBundleFile(PreLoaderReactActivity.JSBUNDLE_PATH + jsBundle)
                     .setJSMainModulePath("index")
                     .addPackage(new MainReactPackage())
 //                .setUseDeveloperSupport(BuildConfig.DEBUG)

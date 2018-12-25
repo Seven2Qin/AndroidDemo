@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.seven.rn.BaseReactActivity;
 import com.seven.rn.preloader.PreLoaderReactActivity;
 import com.seven.rn.preloader.ReactNativePreLoader;
 

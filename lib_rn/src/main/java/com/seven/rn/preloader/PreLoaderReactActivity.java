@@ -18,6 +18,7 @@ import javax.annotation.Nullable;
  */
 public class PreLoaderReactActivity extends ReactActivity implements DefaultHardwareBackBtnHandler, PermissionAwareActivity {
 
+    public final static String JSBUNDLE_PATH = "/sdcard/";
     public final static String BUNDLE_NAME = "bundle_name";
     public final static String DEFAULT_MAIN_COMPONENT = "YMMRNDemo";
     public final static String DEFAULT_JSBUNDLE = "1.bundle";
