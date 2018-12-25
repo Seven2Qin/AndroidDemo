@@ -1,6 +1,7 @@
 package com.seven.rn;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -96,7 +97,7 @@ public class BaseReactActivity extends Activity implements DefaultHardwareBackBt
         if (requestCode == OVERLAY_PERMISSION_REQ_CODE) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (!Settings.canDrawOverlays(this)) {
-                    // SYSTEM_ALERT_WINDOW permission not granted...
+                    new AlertDialog.Builder(this).setTitle("提示").setMessage("请打开悬浮窗权限").show();
                 }
             }
         }
