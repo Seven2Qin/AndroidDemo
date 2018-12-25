@@ -21,6 +21,7 @@ public class PreLoaderReactActivity extends ReactActivity implements DefaultHard
     public final static String JSBUNDLE_PATH = "/sdcard/";
     public final static String BUNDLE_NAME = "bundle_name";
     public final static String DEFAULT_MAIN_COMPONENT = "YMMRNDemo";
+    public final static String PRELOADER_JSBUNDLE_KEY = "preloader_jsbundle_key";
     public final static String DEFAULT_JSBUNDLE = "1.bundle";
     private PreLoadReactDelegate mPreLoadReactDelegate;
 

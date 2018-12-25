@@ -7,8 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.seven.rn.preloader.PreLoaderRN;
 import com.seven.rn.preloader.PreLoaderReactActivity;
-import com.seven.rn.preloader.ReactNativePreLoader;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onWindowFocusChanged(hasFocus);
         if(hasFocus) {
             Log.i("Seven","onWindowFocusChanged");
-            ReactNativePreLoader.preLoad(MainActivity.this,"2.bundle");
+            PreLoaderRN.preLoad(MainActivity.this,"1.bundle");
         }
     }
 
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.tv_one:
                 intent = new Intent(MainActivity.this, PreLoaderReactActivity.class);
+                intent.putExtra(PreLoaderReactActivity.BUNDLE_NAME,"2.bundle");
                 break;
             case R.id.tv_two:
                 intent = new Intent(MainActivity.this, EnterActivity.class);

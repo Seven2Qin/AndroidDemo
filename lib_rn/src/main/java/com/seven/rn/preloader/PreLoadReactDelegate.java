@@ -29,11 +29,9 @@ public class PreLoadReactDelegate {
     private final int REQUEST_OVERLAY_PERMISSION_CODE = 1111;
     private DoubleTapReloadRecognizer mDoubleTapReloadRecognizer;
     private ReactInstanceManager mReactInstanceManager;
-    private String jsBundle = "";
 
     public PreLoadReactDelegate(Activity activity) {
         this.mActivity = activity;
-        jsBundle = activity.getIntent().getStringExtra(PreLoaderReactActivity.BUNDLE_NAME);
     }
 
     public void onCreate() {
@@ -49,12 +47,12 @@ public class PreLoadReactDelegate {
 
         if (!needsOverlayPermission) {
             // 1.从缓存中获取RootView
-            mReactRootView = ReactNativePreLoader.getReactRootView(PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT);
+            mReactRootView = PreLoaderRN.getReactRootView(PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT);
 
             if (mReactRootView == null) {
                 // 2.缓存中不存在RootView,直接创建
                 mReactRootView = new ReactRootView(mActivity);
-                mReactInstanceManager = ReactNativePreLoader.getReactInstanceManager(mActivity, jsBundle);
+                mReactInstanceManager = PreLoaderRN.getReactInstanceManager(mActivity);
                 mReactRootView.startReactApplication(
                         mReactInstanceManager,
                         PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT,
@@ -63,7 +61,7 @@ public class PreLoadReactDelegate {
 
             //3.判断ReactInstanceManager是否为空
             if (mReactRootView.getReactInstanceManager() == null) {
-                mReactInstanceManager = ReactNativePreLoader.getReactInstanceManager(mActivity, jsBundle);
+                mReactInstanceManager = PreLoaderRN.getReactInstanceManager(mActivity);
                 mReactRootView.startReactApplication(mReactInstanceManager, PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT, null);
             }
             // 4.将RootView设置到Activity布局
@@ -100,7 +98,7 @@ public class PreLoadReactDelegate {
         }
 
         // 清除View
-        ReactNativePreLoader.deatchView(PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT);
+        PreLoaderRN.deatchView(PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT);
     }
 
     public boolean onNewIntent(Intent intent) {
@@ -123,7 +121,7 @@ public class PreLoadReactDelegate {
                     }
                     mReactRootView = new ReactRootView(mActivity);
                     mReactRootView.startReactApplication(
-                            ReactNativePreLoader.getReactInstanceManager(mActivity,jsBundle),
+                            PreLoaderRN.getReactInstanceManager(mActivity),
                             PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT,
                             null);
                     mActivity.setContentView(mReactRootView);

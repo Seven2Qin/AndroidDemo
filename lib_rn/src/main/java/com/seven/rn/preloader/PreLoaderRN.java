@@ -9,6 +9,7 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.shell.MainReactPackage;
+import com.seven.rn.utils.PreferencesUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +18,7 @@ import java.util.Map;
  * Created by seven.qin on 2018/12/25.
  */
 
-public class ReactNativePreLoader {
+public class PreLoaderRN {
 
     private static final Map<String, ReactRootView> CACHE = new HashMap<>();
     private static ReactInstanceManager mReactInstanceManager;
@@ -33,9 +34,13 @@ public class ReactNativePreLoader {
         if (CACHE.get(PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT) != null) {
             return;
         }
+
+        //保存当前预加载jsBundle name
+        PreferencesUtils.putString(activity,PreLoaderReactActivity.PRELOADER_JSBUNDLE_KEY,jsBundle);
+
         // 1.创建ReactRootView
         ReactRootView rootView = new ReactRootView(activity);
-        mReactInstanceManager = getReactInstanceManager(activity, jsBundle);
+        mReactInstanceManager = getReactInstanceManager(activity);
         rootView.startReactApplication(mReactInstanceManager, PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT, null);
         // 2.添加到缓存
         CACHE.put(PreLoaderReactActivity.DEFAULT_MAIN_COMPONENT, rootView);
@@ -64,14 +69,15 @@ public class ReactNativePreLoader {
                 parent.removeView(rootView);
             }
         } catch (Throwable e) {
-            Log.e("ReactNativePreLoader", e.getMessage());
+            Log.e("PreLoaderRN", e.getMessage());
         }
 
     }
 
 
-    public static ReactInstanceManager getReactInstanceManager(Activity activity, String jsBundle) {
+    public static ReactInstanceManager getReactInstanceManager(Activity activity) {
         //默认jsBundle
+        String jsBundle =  PreferencesUtils.getString(activity,PreLoaderReactActivity.PRELOADER_JSBUNDLE_KEY);
         if (TextUtils.isEmpty(jsBundle)) {
             jsBundle = PreLoaderReactActivity.DEFAULT_JSBUNDLE;
         }

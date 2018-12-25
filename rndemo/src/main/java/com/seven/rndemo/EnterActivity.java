@@ -36,7 +36,7 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
         super.onWindowFocusChanged(hasFocus);
         if(hasFocus) {
             Log.i("Seven","onWindowFocusChanged");
-//            ReactNativePreLoader.preLoad(EnterActivity.this,"1.bundle");
+//            PreLoaderRN.preLoad(EnterActivity.this,"1.bundle");
         }
     }
 
