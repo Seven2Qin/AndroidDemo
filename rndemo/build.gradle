@@ -17,9 +17,6 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86", "armeabi"
         }
-        packagingOptions {
-            exclude "lib/arm64-v8a/libimagepipeline.so"
-        }
 
     }
 

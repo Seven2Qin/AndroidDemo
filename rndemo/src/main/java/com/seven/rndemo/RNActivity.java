@@ -8,10 +8,21 @@ import com.seven.rn.BaseReactActivity;
 /**
  * Created by seven.qin on 2018/12/25.
  */
-public class RNActivity extends Activity {
+public class RNActivity extends BaseReactActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        init();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

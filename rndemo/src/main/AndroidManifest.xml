@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RNActivity" />
-        <activity android:name="com.seven.rn.BaseReactActivity"/>
+        <!--<activity android:name="com.seven.rn.BaseReactActivity"/>-->
     </application>
 
 </manifest>

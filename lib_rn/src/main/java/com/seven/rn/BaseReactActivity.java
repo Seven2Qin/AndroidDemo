@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.app.AppCompatActivity;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactInstanceManager;
@@ -39,6 +40,12 @@ public class BaseReactActivity extends Activity implements DefaultHardwareBackBt
             }
         }
 
+    }
+
+    /**
+     * 初始化
+     */
+    protected void init() {
         mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
@@ -65,19 +72,26 @@ public class BaseReactActivity extends Activity implements DefaultHardwareBackBt
     public void invokeDefaultOnBackPressed() {
         super.onBackPressed();
     }
+
     @Override
     protected void onPause() {
         super.onPause();
-
-        if (mReactInstanceManager != null) {
-            mReactInstanceManager.onHostPause();
-        }
+        onHostPause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        onHostResume();
+    }
 
+    private void onHostPause() {
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager.onHostPause();
+        }
+    }
+
+    private void onHostResume() {
         if (mReactInstanceManager != null) {
             mReactInstanceManager.onHostResume(this, this);
         }
@@ -91,6 +105,7 @@ public class BaseReactActivity extends Activity implements DefaultHardwareBackBt
             super.onBackPressed();
         }
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
