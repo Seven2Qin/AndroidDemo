@@ -20,7 +20,7 @@ public class BaseApplication extends Application {
         super.attachBaseContext(base);
         Log.i("MainActivity","BaseApplication --> attachBaseContext");
         try {
-            HookHelper.attachContext();
+            //HookHelper.attachContext();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -19,6 +19,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "$rootDir/lib_rn_57"
+        }
     }
 }
 

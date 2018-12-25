@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
         Log.i(TAG,"MainActivity --> attachBaseContext");
-//        try {
-//            HookHelper.attachContext();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            HookHelper.attachContext();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -19,8 +19,10 @@
             <option value="$PROJECT_DIR$/binder" />
             <option value="$PROJECT_DIR$/hook" />
             <option value="$PROJECT_DIR$/hotfix" />
+            <option value="$PROJECT_DIR$/lib_rn" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/pluginApk" />
+            <option value="$PROJECT_DIR$/rndemo" />
             <option value="$PROJECT_DIR$/thread" />
           </set>
         </option>
