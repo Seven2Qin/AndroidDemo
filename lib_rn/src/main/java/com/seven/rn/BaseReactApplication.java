@@ -17,6 +17,12 @@ import java.util.List;
 
 public class BaseReactApplication extends Application implements ReactApplication {
 
+    private static volatile BaseReactApplication mApplication = null;
+
+    public static BaseReactApplication getInstance() {
+        return mApplication;
+    }
+
     private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {
@@ -44,6 +50,7 @@ public class BaseReactApplication extends Application implements ReactApplicatio
     @Override
     public void onCreate() {
         super.onCreate();
+        mApplication = this;
         SoLoader.init(this, /* native exopackage */ false);
     }
 }

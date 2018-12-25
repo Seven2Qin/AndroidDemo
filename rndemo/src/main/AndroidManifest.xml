@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RNActivity" />
+        <activity android:name=".EnterActivity" />
         <!--<activity android:name="com.seven.rn.BaseReactActivity"/>-->
     </application>
 

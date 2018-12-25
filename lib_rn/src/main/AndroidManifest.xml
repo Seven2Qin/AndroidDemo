@@ -15,6 +15,7 @@
         >
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity"/>
         <activity android:name="com.seven.rn.BaseReactActivity"/>
+        <activity android:name="com.seven.rn.preloader.PreLoaderReactActivity"/>
     </application>
 
 </manifest>
