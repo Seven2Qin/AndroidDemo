@@ -23,6 +23,7 @@ import javax.annotation.Nullable;
  */
 public class BaseReactActivity extends Activity implements DefaultHardwareBackBtnHandler {
 
+    public final static String BUNDLE_NAME = "bundle_name";
     private final static int OVERLAY_PERMISSION_REQ_CODE = 1001;
     private ReactRootView mReactRootView;
     private ReactInstanceManager mReactInstanceManager;
@@ -46,13 +47,14 @@ public class BaseReactActivity extends Activity implements DefaultHardwareBackBt
      * 初始化
      */
     protected void init() {
+
+        String bundleName = getIntent().getStringExtra(BUNDLE_NAME);
+
         mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
-                .setBundleAssetName("index.android.bundle")
-//                .setJSBundleFile("/sdcard/index.android.bundle")
-//              相信很多人都是这个方法，但是我的没有可能是我的版本更新了方法名替换了，有哪一个方法就用哪一个
-//                .setJSMainModuleName("index.android")
+//                .setBundleAssetName(bundleName)
+                .setJSBundleFile("/sdcard/"+bundleName)
                 .setJSMainModulePath("index")
                 .addPackage(new MainReactPackage())
                 /**
