@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.lang.reflect.Method;
 
@@ -28,6 +29,7 @@ public class EvilInstrumentation extends Instrumentation {
             Context who, IBinder contextThread, IBinder token, Activity target,
             Intent intent, int requestCode, Bundle options) {
 
+        Toast.makeText(who,"success",Toast.LENGTH_SHORT).show();
         // Hook之前, XXX到此一游!
         Log.d(TAG, "\n执行了startActivity, 参数如下: \n" + "who = [" + who + "], " +
                 "\ncontextThread = [" + contextThread + "], \ntoken = [" + token + "], " +

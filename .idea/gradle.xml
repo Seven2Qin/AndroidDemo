@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
+        <option name="disableWrapperSourceDistributionNotification" value="true" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AIDLApp" />
+            <option value="$PROJECT_DIR$/AIDLService" />
             <option value="$PROJECT_DIR$/DesignMode" />
             <option value="$PROJECT_DIR$/JavaDemo" />
             <option value="$PROJECT_DIR$/JsBridge" />
             <option value="$PROJECT_DIR$/JsBridgeDemo" />
             <option value="$PROJECT_DIR$/LaunchMode" />
             <option value="$PROJECT_DIR$/ViewDemo" />
+            <option value="$PROJECT_DIR$/WindowDemo" />
             <option value="$PROJECT_DIR$/annotation" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/binder" />
             <option value="$PROJECT_DIR$/hook" />
             <option value="$PROJECT_DIR$/hotfix" />
-            <option value="$PROJECT_DIR$/lib_rn" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/pluginApk" />
-            <option value="$PROJECT_DIR$/rndemo" />
             <option value="$PROJECT_DIR$/thread" />
           </set>
         </option>

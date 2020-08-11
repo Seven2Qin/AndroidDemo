@@ -1,7 +1,6 @@
 package com.seven.ad;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,12 +9,14 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.seven.library.DLProxyActivity;
+import com.seven.viewdemo.ViewDemoActivity;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -26,10 +27,10 @@ import dalvik.system.DexClassLoader;
 //import com.seven.annotation.BindView;
 
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final static String TAG = "MainActivity";
-//        @BindView(R.id.btn_launchMode)
+    //        @BindView(R.id.btn_launchMode)
     TextView mLaunchMode;
     //    @BindView(R.id.btn_javaDemo)
     TextView mJavaDemo;
@@ -37,9 +38,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(TAG,"onCreate");
+        Log.i(TAG, "onCreate");
 //        Resources resources = getBundleResource(getApplicationContext());
-//        int layout = resources.getIdentifier("activity_main", "layout", "com.seven.base");
+//        int layout = resources.getIdentifier("activity_view_demo", "layout", "com.seven.base");
 //        View view = LayoutInflater.from(this).inflate(layout, null);
 //        setContentView(view);
         setContentView(R.layout.activity_main);
@@ -64,11 +65,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //
 
 
-//        ButterKnife.inject(this);
-        mLaunchMode = findViewById(R.id.btn_launchMode);
-////        mJavaDemo = findViewById(R.id.btn_javaDemo);
-//
-        mLaunchMode.setOnClickListener(this);
+////        ButterKnife.inject(this);
+//        mLaunchMode = findViewById(R.id.btn_launchMode);
+//////        mJavaDemo = findViewById(R.id.btn_javaDemo);
+////
+//        mLaunchMode.setOnClickListener(this);
 //        mJavaDemo.setOnClickListener(this);
     }
 
@@ -96,14 +97,25 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Intent intent = null;
         switch (v.getId()) {
+            case R.id.btn_designMode:
+                intent = new Intent(this, DLProxyActivity.class);
+                intent.putExtra(DLProxyActivity.EXTRA_DEX_PATH, "/sdcard/pluginApk-debug.apk");
+                startActivity(intent);
+                break;
             case R.id.btn_launchMode:
-                Intent intent = new Intent(this, DLProxyActivity.class);
+                intent = new Intent(this, DLProxyActivity.class);
                 intent.putExtra(DLProxyActivity.EXTRA_DEX_PATH, "/sdcard/pluginApk-debug.apk");
                 startActivity(intent);
                 break;
             case R.id.btn_javaDemo:
                 Toast.makeText(MainActivity.this, "javaDemo", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btn_viewDemo:
+                intent = new Intent(this, ViewDemoActivity.class);
+                intent.putExtra(DLProxyActivity.EXTRA_DEX_PATH, "/sdcard/pluginApk-debug.apk");
+                startActivity(intent);
                 break;
         }
 
@@ -160,7 +172,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void attachBaseContext(Context context) {
-        Log.i(TAG,"attachBaseContext");
+        Log.i(TAG, "attachBaseContext");
 //        replaceContextResources(context);
         super.attachBaseContext(context);
     }
@@ -181,5 +193,4 @@ public class MainActivity extends Activity implements View.OnClickListener {
             e.printStackTrace();
         }
     }
-
 }

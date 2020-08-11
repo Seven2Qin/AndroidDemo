@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <declare-styleable name="HyperLinkTextView">
+        <attr name="itemSize" format="integer" />
+        <attr name="defaultColor" format="color" />
+    </declare-styleable>
+
 </resources>

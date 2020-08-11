@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewDemoActivity">
+
+    <com.seven.viewdemo.CustomButton
+        android:id="@+id/btn_touch"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="Touch Button"
+        android:background="@color/colorAccent" />
+
+    <com.seven.viewdemo.HyperLinkTextView
+        android:id="@+id/tv_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:itemSize="20" />
+
+
+</LinearLayout>

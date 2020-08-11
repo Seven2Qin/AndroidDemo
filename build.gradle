@@ -5,6 +5,37 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'http://maven.amh-group.com/artifactory/libs-release-local'
+        }
+        maven {
+            url 'http://maven.amh-group.com/artifactory/libs-snapshot-local'
+        }
+        maven {
+            url 'http://maven.amh-group.com/artifactory/plugins-snapshot-local'
+        }
+        maven {
+            url 'http://maven.amh-group.com/artifactory/plugins-release-local'
+        }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        jcenter()
+        maven { url 'http://maven.aliyun.com/mvn/repository/' }
+        repositories {
+            maven {
+                url "https://plugins.gradle.org/m2/"
+            }
+        }
+        maven {
+            name 'wlqq-releases'
+            url 'http://nexus.56qq.cn:81/content/repositories/wlqq-releases'
+        }
+        maven {
+            name 'wlqq-snapshots'
+            url 'http://nexus.56qq.cn:81/content/repositories/wlqq-snapshots'
+        }
+        maven {
+            url 'http://nexus.56qq.cn:81/content/repositories/thirdparty'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
@@ -16,15 +47,59 @@ buildscript {
 }
 
 allprojects {
+    apply plugin: 'maven'
+
     repositories {
         google()
-        jcenter()
         maven {
             url "$rootDir/lib_rn_57"
+        }
+        maven {
+            url 'http://maven.amh-group.com/artifactory/libs-release-local'
+        }
+        maven {
+            url 'http://maven.amh-group.com/artifactory/libs-snapshot-local'
+        }
+        maven {
+            url 'http://maven.amh-group.com/artifactory/plugins-snapshot-local'
+        }
+        maven {
+            url 'http://maven.amh-group.com/artifactory/plugins-release-local'
+        }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        jcenter()
+        maven { url 'http://maven.aliyun.com/mvn/repository/' }
+        maven { url "https://jitpack.io" }
+        maven {
+            name 'wlqq-releases'
+            url 'http://nexus.56qq.cn:81/content/repositories/wlqq-releases'
+        }
+        maven {
+            name 'wlqq-snapshots'
+            url 'http://nexus.56qq.cn:81/content/repositories/wlqq-snapshots'
+        }
+        maven {
+            url 'http://nexus.56qq.cn:81/content/repositories/thirdparty'
+        }
+        repositories {
+            maven {
+                url "https://plugins.gradle.org/m2/"
+            }
+        }
+        maven {
+            name 'wlqq-releases'
+            url 'http://nexus.56qq.cn:81/content/repositories/wlqq-releases'
+        }
+        maven {
+            name 'wlqq-snapshots'
+            url 'http://nexus.56qq.cn:81/content/repositories/wlqq-snapshots'
+        }
+        maven {
+            url 'http://nexus.56qq.cn:81/content/repositories/thirdparty'
         }
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}

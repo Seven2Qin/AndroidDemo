@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AddressDateChoose">
+        <attr name="itemIcon" format="reference" />
+        <attr name="defaultTextColor" format="color" />
+        <attr name="cityDesc" format="string" />
+        <attr name="dateDesc" format="string" />
+    </declare-styleable>
+</resources>
