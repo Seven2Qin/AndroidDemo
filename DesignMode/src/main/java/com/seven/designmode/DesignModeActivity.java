@@ -10,14 +10,14 @@ import com.seven.designmode.mvp.main.MainModelImpl;
 import com.seven.designmode.mvp.main.MainPresenter;
 import com.seven.designmode.mvp.main.MainView;
 
-public class MainActivity extends BaseMvpActivity<MainModel, MainView, MainPresenter> implements MainView {
+public class DesignModeActivity extends BaseMvpActivity<MainModel, MainView, MainPresenter> implements MainView {
 
     private Button btnMVP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_design_mode);
         btnMVP = findViewById(R.id.btn_mvp);
         btnMVP.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -11,12 +11,12 @@ import android.view.View;
 import com.seven.annotation.Router;
 
 @Router(path = "MainActivity", module = "LaunchMode")
-public class MainActivity extends BaseActivity {
+public class LaunchModeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_launch_mode);
         findViewById(R.id.btn_go).setOnClickListener(this);
 
         ThreadLocal<Boolean> booleanThreadLocal = new ThreadLocal();

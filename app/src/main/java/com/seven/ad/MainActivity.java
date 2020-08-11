@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.seven.designmode.DesignModeActivity;
+import com.seven.launchmode.LaunchModeActivity;
 import com.seven.library.DLProxyActivity;
 import com.seven.viewdemo.ViewDemoActivity;
 
@@ -100,13 +102,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = null;
         switch (v.getId()) {
             case R.id.btn_designMode:
-                intent = new Intent(this, DLProxyActivity.class);
-                intent.putExtra(DLProxyActivity.EXTRA_DEX_PATH, "/sdcard/pluginApk-debug.apk");
+                intent = new Intent(this, DesignModeActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_launchMode:
-                intent = new Intent(this, DLProxyActivity.class);
-                intent.putExtra(DLProxyActivity.EXTRA_DEX_PATH, "/sdcard/pluginApk-debug.apk");
+                intent = new Intent(this, LaunchModeActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_javaDemo:
@@ -114,7 +114,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_viewDemo:
                 intent = new Intent(this, ViewDemoActivity.class);
-                intent.putExtra(DLProxyActivity.EXTRA_DEX_PATH, "/sdcard/pluginApk-debug.apk");
                 startActivity(intent);
                 break;
         }
