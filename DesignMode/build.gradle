@@ -1,12 +1,12 @@
-//apply plugin: 'com.android.application'
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
+//apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
 
 
     defaultConfig {
-//        applicationId "com.seven.designmode"
+        applicationId "com.seven.designmode"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1

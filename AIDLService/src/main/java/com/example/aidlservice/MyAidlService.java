@@ -8,6 +8,11 @@ import android.support.annotation.Nullable;
 
 public class MyAidlService extends Service {
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {

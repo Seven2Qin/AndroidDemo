@@ -59,6 +59,8 @@ public class CustomButton extends View {
         return mySize;
     }
 
+
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
@@ -99,4 +101,6 @@ public class CustomButton extends View {
         }
         return intercept;
     }
+
+
 }

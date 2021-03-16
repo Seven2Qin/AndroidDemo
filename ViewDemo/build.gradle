@@ -1,14 +1,14 @@
-if (useLibrary) {
-    apply plugin: 'com.android.library'
-} else {
+//if (useLibrary) {
+//    apply plugin: 'com.android.library'
+//} else {
     apply plugin: 'com.android.application'
-}
+//}
 
 android {
     compileSdkVersion 27
 
     defaultConfig {
-//        applicationId "com.seven.viewdemo"
+        applicationId "com.seven.viewdemo"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1

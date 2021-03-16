@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         isGrantExternalRW();
 
-//        startHandlerThread();
+        startHandlerThread();
 
 //        new Thread(new Runnable() {
 //            @Override
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }, 1);
 
         } else {
-//            testAsyncTask();
+            testAsyncTask();
             handleDexClassLoader();
         }
 

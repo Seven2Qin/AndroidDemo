@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/AIDLApp" />
             <option value="$PROJECT_DIR$/AIDLService" />
+            <option value="$PROJECT_DIR$/BitmapLrucacheDemo" />
             <option value="$PROJECT_DIR$/DesignMode" />
             <option value="$PROJECT_DIR$/JavaDemo" />
             <option value="$PROJECT_DIR$/JsBridge" />
@@ -31,6 +32,7 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>

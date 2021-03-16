@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 public class ActivityD extends BaseActivity {
 
@@ -17,7 +19,7 @@ public class ActivityD extends BaseActivity {
     @Override
     public void onClick(View v) {
 
-        startActivity(new Intent(this,ActivityB.class));
+        startActivity(new Intent(this,ActivityC.class));
 
     }
 }

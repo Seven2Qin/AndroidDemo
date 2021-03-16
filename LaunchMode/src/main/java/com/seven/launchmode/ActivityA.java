@@ -16,7 +16,7 @@ public class ActivityA extends BaseActivity {
     @Override
     public void onClick(View v) {
 
-        startActivity(new Intent(this,ActivityB.class));
+        startActivity(new Intent(this,ActivityD.class));
 
     }
 }
